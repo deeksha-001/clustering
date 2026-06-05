@@ -19,17 +19,18 @@ df = pd.read_csv(DATA_PATH)
 # ----------------------------------
 # Load Saved Files
 # ----------------------------------
-
+BASE_DIR = Path(__file__).resolve().parent
+MODELS_DIR = BASE_DIR.parent / "models"
 kmeans = joblib.load(
-    "models/kmeans_model.pkl"
+    MODELS_DIR / "kmeans_model.pkl"
 )
 
 scaler = joblib.load(
-    "models/scaler.pkl"
+    MODELS_DIR / "scaler.pkl"
 )
 
 clustered_df = joblib.load(
-    "models/kmeans_df.pkl"
+    MODELS_DIR / "kmeans_df.pkl"
 )
 
 # ----------------------------------

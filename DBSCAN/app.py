@@ -23,12 +23,15 @@ df = pd.read_csv(DATA_PATH)
 # Load Saved Files
 # ----------------------------------
 
+BASE_DIR = Path(__file__).resolve().parent
+MODELS_DIR = BASE_DIR.parent / "models"
+
 cluster_centers = joblib.load(
-    "models/cluster_centers.pkl"
+    MODELS_DIR / "cluster_centers.pkl"
 )
 
 clustered_df = joblib.load(
-    "models/dbscan_clustered_df.pkl"
+    MODELS_DIR / "dbscan_clustered_df.pkl"
 )
 
 # ----------------------------------
