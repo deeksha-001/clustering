@@ -10,7 +10,14 @@ from scipy.spatial.distance import cdist
 # Load Dataset
 # ----------------------------------
 
-df = pd.read_csv("../data/Mall_Customers.csv")
+from pathlib import Path
+import pandas as pd
+
+BASE_DIR = Path(__file__).resolve().parent
+
+DATA_PATH = BASE_DIR.parent / "data" / "Mall_Customers.csv"
+
+df = pd.read_csv(DATA_PATH)
 
 # ----------------------------------
 # Load Saved Files

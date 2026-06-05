@@ -7,9 +7,14 @@ import matplotlib.pyplot as plt
 # -----------------------------
 # Load Dataset
 # -----------------------------
+from pathlib import Path
+import pandas as pd
 
-df = pd.read_csv("../data/Mall_Customers.csv")
+BASE_DIR = Path(__file__).resolve().parent
 
+DATA_PATH = BASE_DIR.parent / "data" / "Mall_Customers.csv"
+
+df = pd.read_csv(DATA_PATH)
 # -----------------------------
 # Load Model
 # -----------------------------
