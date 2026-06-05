@@ -23,7 +23,7 @@ df = pd.read_csv(DATA_PATH)
 # Load Saved Files
 # ----------------------------------
 BASE_DIR = Path(__file__).resolve().parent
-MODELS_DIR = BASE_DIR.parent / "models"
+MODELS_DIR = BASE_DIR / "models"
 cluster_centers = joblib.load(
     MODELS_DIR / "cluster_centers.pkl"
 )

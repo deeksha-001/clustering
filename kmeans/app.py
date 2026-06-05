@@ -20,7 +20,7 @@ df = pd.read_csv(DATA_PATH)
 # Load Saved Files
 # ----------------------------------
 BASE_DIR = Path(__file__).resolve().parent
-MODELS_DIR = BASE_DIR.parent / "models"
+MODELS_DIR = BASE_DIR / "models"
 kmeans = joblib.load(
     MODELS_DIR / "kmeans_model.pkl"
 )
@@ -32,12 +32,6 @@ scaler = joblib.load(
 clustered_df = joblib.load(
     MODELS_DIR / "kmeans_df.pkl"
 )
-st.write("BASE_DIR:", BASE_DIR)
-st.write("Models exists:", MODELS_DIR.exists())
-
-if MODELS_DIR.exists():
-    st.write("Files in models:")
-    st.write([f.name for f in MODELS_DIR.iterdir()])
 # ----------------------------------
 # Cluster Centers
 # ----------------------------------

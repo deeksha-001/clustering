@@ -19,7 +19,7 @@ df = pd.read_csv(DATA_PATH)
 # Load Model
 # -----------------------------
 BASE_DIR = Path(__file__).resolve().parent
-MODELS_DIR = BASE_DIR.parent / "models"
+MODELS_DIR = BASE_DIR / "models"
 
 gmm = joblib.load(MODELS_DIR / "gmm_model.pkl")
 scaler = joblib.load(MODELS_DIR / "gmm_scaler.pkl")
