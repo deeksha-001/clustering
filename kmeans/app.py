@@ -19,7 +19,6 @@ df = pd.read_csv(DATA_PATH)
 # ----------------------------------
 # Load Saved Files
 # ----------------------------------
-BASE_DIR = Path(__file__).resolve().parent
 MODELS_DIR = BASE_DIR / "models"
 kmeans = joblib.load(
     MODELS_DIR / "kmeans_model.pkl"

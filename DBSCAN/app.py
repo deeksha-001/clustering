@@ -17,19 +17,9 @@ BASE_DIR = Path(__file__).resolve().parent
 
 DATA_PATH = BASE_DIR.parent / "data" / "Mall_Customers.csv"
 
-df = pd.read_csv(DATA_PATH)
-
-# ----------------------------------
-# Load Saved Files
-# ----------------------------------
-
-
-
-from pathlib import Path
-import streamlit as st
-
-BASE_DIR = Path(__file__).resolve().parent
 MODELS_DIR = BASE_DIR / "models"
+
+df = pd.read_csv(DATA_PATH)
 
 cluster_centers = joblib.load(
     MODELS_DIR / "cluster_centers.pkl"
@@ -38,13 +28,6 @@ cluster_centers = joblib.load(
 clustered_df = joblib.load(
     MODELS_DIR / "dbscan_clustered_df.pkl"
 ) 
-st.write("BASE_DIR:", BASE_DIR)
-st.write("MODELS_DIR:", MODELS_DIR)
-st.write("MODELS EXISTS:", MODELS_DIR.exists())
-
-if MODELS_DIR.exists():
-    st.write("FILES:")
-    st.write([f.name for f in MODELS_DIR.iterdir()])
 # ----------------------------------
 # Page Config
 # ----------------------------------
